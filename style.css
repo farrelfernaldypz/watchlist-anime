@@ -1,0 +1,293 @@
+/* Anime Watchlist Premium CSS
+   Color Palette: 
+   Primary: #355872 | Secondary: #7AAACE | Accent: #9CD5FF | Cream: #F7F8F0 
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+    --primary: #355872;
+    --secondary: #7AAACE;
+    --accent: #9CD5FF;
+    --cream: #F7F8F0;
+    --white: #ffffff;
+    --shadow: rgba(53, 88, 114, 0.2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    color: #333;
+}
+
+/* --- Container Utama --- */
+.container {
+    background: rgba(247, 248, 240, 0.96);
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    max-width: 950px;
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+h2 {
+    color: var(--primary);
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 5px;
+    background: var(--accent);
+    margin: 12px auto;
+    border-radius: 10px;
+}
+
+/* --- Buttons & Navigation --- */
+.btn-tambah {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--primary);
+    color: var(--cream);
+    padding: 12px 24px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px var(--shadow);
+}
+
+.btn-tambah:hover {
+    background: var(--secondary);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(122, 170, 206, 0.4);
+}
+
+/* --- Table Design --- */
+.table-wrapper {
+    background: var(--white);
+    border-radius: 16px;
+    overflow: hidden;
+    overflow-x: auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    margin-top: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: #fcfcfc;
+    color: var(--primary);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    padding: 18px;
+    text-align: left;
+    border-bottom: 2px solid var(--accent);
+}
+
+td {
+    padding: 16px 18px;
+    border-bottom: 1px solid #f0f0f0;
+    vertical-align: middle;
+}
+
+tr:hover {
+    background-color: rgba(156, 213, 255, 0.08);
+}
+
+/* --- Status Badges --- */
+.status-badge {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+.watching { background: var(--accent); color: var(--primary); }
+.completed { background: #2ecc71; color: white; }
+.plan-to-watch { background: #f1c40f; color: #355872; }
+.dropped { background: #e74c3c; color: white; }
+
+/* --- Forms & Inputs --- */
+form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 0;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--primary);
+    font-size: 0.9rem;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 14px 18px;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    background-color: var(--white);
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+input:focus, select:focus {
+    border-color: var(--secondary);
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(122, 170, 206, 0.15);
+    background-color: #fff;
+}
+
+/* Custom Select Arrow */
+select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23355872' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 16px;
+    padding-right: 45px;
+}
+
+/* Progress Bar */
+.progress-bg {
+    width: 100%;
+    background: #eee;
+    height: 8px;
+    border-radius: 10px;
+    margin-top: 5px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--accent);
+    border-radius: 10px;
+    transition: width 0.5s ease;
+}
+
+/* Action Icons */
+.action-bar {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 30px;
+    padding: 0 5px;
+}
+
+td:last-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    min-width: 120px;
+}
+
+.btn-edit, .btn-hapus {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+    margin-left: 0 !important;
+}
+
+.btn-edit { background: rgba(122, 170, 206, 0.15); color: var(--primary); }
+.btn-edit:hover { background: var(--primary); color: white; }
+
+.btn-hapus { background: rgba(231, 76, 60, 0.1); color: #e74c3c; margin-left: 5px; }
+.btn-hapus:hover { background: #e74c3c; color: white; }
+
+/* Submit & Cancel */
+.btn-submit {
+    width: 100%;
+    padding: 16px;
+    background: var(--primary);
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+    background: var(--secondary);
+    box-shadow: 0 4px 12px rgba(122, 170, 206, 0.3);
+}
+
+.btn-batal-form {
+    display: block;
+    text-align: center;
+    margin-top: 18px;
+    color: var(--secondary);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Menyesuaikan font SweetAlert2 agar selaras dengan tema */
+.swal2-popup {
+    font-family: 'Poppins', sans-serif !important;
+}
+
+.swal2-title {
+    color: #355872 !important;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .container { padding: 25px 15px; }
+    h2 { font-size: 1.6rem; }
+    .form-row { flex-direction: column; gap: 0; }
+    th, td { padding: 12px; font-size: 0.8rem; }
+}
